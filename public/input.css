@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Agdasima";
+  src: url("/fonts/Agdasima-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Agdasima";
+  src: url("/fonts/Agdasima-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+
+@theme {
+  --color-brand:#158DE3;
+  --color-secondary:#020024;
+  --color-dot:#09054D;
+  --font-poppins: "Poppins", sans-serif;
+  --font-agdasima: "Agdasima", sans-serif;
+}
+
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 18s linear infinite;
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.rotate-loop {
+  transform-origin: center;
+  animation: spin 1.2s linear infinite;
+}
+
+
