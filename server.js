@@ -1,4 +1,4 @@
-console.log("🚀 Server file started");
+console.log("Server file started");
 const express = require("express");
 const db = require("./database");
 
@@ -6,6 +6,8 @@ const app = express();
 
 app.use(express.json());
 
+// SERVE STATIC FILES (HTML, CSS, JS)
+app.use(express.static("public"));
 
 // TEST ROUTE
 app.get("/test", (req, res) => {
@@ -58,10 +60,6 @@ app.get("/api/hospitals", (req, res) => {
     }
   });
 });
-
-// SERVE STATIC FILES (HTML, CSS, JS)
-app.use(express.static("public"));
-
 
 
 // TO GET STATES
