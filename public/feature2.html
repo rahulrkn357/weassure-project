@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WeAssure TPA Pvt Ltd</title>
 
   <!--Tailwind CLI build -->
@@ -15,7 +14,6 @@
       background-image: linear-gradient(90deg, rgba(99, 102, 241, 0.06), rgba(0, 0, 0, 0));
     }
 
-    
     /* For background */
     .dark-mode {
       background-color: #0f172a;
@@ -40,22 +38,15 @@
     .dark-mode .shadow-md {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     }
-    
   </style>
 </head>
 
 
-
-
 <body id="body">
-
-<!-- LINKS TO GENERATE E-CARD AS PDF  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 
   <!-- NAVIGATION BAR -->
-  <header id="navbar" class="shadow-sm bg-white sticky top-0 z-40">
+  <header id="navbar" class="shadow-sm backdrop-blur sticky top-0 z-40">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
@@ -69,8 +60,8 @@
 
         <!-- NAVIGATION CONTENT -->
         <nav class="hidden md:flex items-center gap-8 ml-60 text-[12px]">
-          <a href="index.html" class="hover:underline hover:text-brand">Home </a>
-          <a href="#downloads" class="text-brand underline">Download E-Card</a>
+          <a href="#home" class="underline text-brand">Home </a>
+          <a href="ecard.html" class="hover:underline hover:text-brand">Download E-Card</a>
           <a href="searchhospital.html" class="hover:underline hover:text-brand">Hospital Network</a>
           <a href="#faqs" class="hover:underline hover:text-brand">FAQ's</a>
           <a href="#aboutus" class="hover:underline hover:text-brand">About Us</a>
@@ -120,138 +111,101 @@
       });
     </script>
 
+
   </header>
 
+  <!-- HERO SECTION -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
 
+    <!-- TOP GRID -->
+    <div class="mt-10 ml-10 mr-20 flex items-center justify-between gap-10">
 
-  <!-- HEADING -->
-  <div class="mt-7 flex flex items-center justify-center text-[30px] font-semibold">Download E-Card</div>
-  <div class="flex flex items-center justify-center text-[18px] tigh text-slate-600">Choose a method below to download
-    your E-Card easily and securely</div>
+      <!-- LEFT TEXT -->
+      <div>
+        <h1 class="ml-13 text-4xl md:text-5xl font-serif leading-tight">
+          Insurance E-Cards
+        </h1>
+      </div>
 
+      <!-- RIGHT IMAGE -->
+      <img src="insuranceecard.png" style="width:480px; height:400px;">
+    </div>
 
-  <!-- MAIN CONTAINER -->
-  <div class="mt-4 flex items-start gap-7 justify-center">
+    <!-- DESCRIPTION -->
+    <div class="mt-12 space-y-6 text-black text-sm md:text-base leading-relaxed">
 
-    <!-- CARD 1 -->
-    <form id="ecardForm1" class="w-[400px] ">
-      <div class="rounded-lg mt-7 flex flex-col py-5 items-center bg-white no-dark shadow-md shadow-slate-200
-                dark:bg-slate-800/60 overflow-hidden">
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow ml-6 p-6">
+        
+        <!-- WHAt IS AN INSURANCE E-CARD? -->
+        <h2 class="text-lg font-semibold mb-2">What is an insurance E-Card?</h2>
 
+        <p class="text-gray-600">
+          An E-Card is your digital identity card for your insurance TPA.
+          It proves that you are registered under the TPA and eligible for benefits. <br>
+          When you show this card at the hospital:
+        </p>  
 
-        <!-- TITLE -->
-        <div class=" text-[13px] text-black no-dark font-semibold -translate-x-17">
-          Download E-Card with UHID & DOB
+        <ul class="pl-6">
+          <li>● The hospital identifies you as a policyholder </li>
+          <li>● It sends a request to the TPA for cashless treatment process</li>
+        </ul>
+       
+        <div class="mt-10 ">
+        <h2 class="text-lg font-semibold mb-2">How to download the E-Card?</h2>
+
+        <p class="text-gray-600">
+          Your E-Card contains basic informations like:
+        </p>
+         
+        <ul class="pl-6">
+          <li>● Employee Name</li>
+          <li>● Employee ID</li>
+          <li>● Date of Birth</li>
+          <li>● Age/Gender</li>
+          <li>● Mobile No</li>
+          <li>● UHID (unique health ID exclusive to the TPA)</li>
+          <li>● Corporate Name</li>
+          <li>● Insurance Name (at the top)</li>
+          <li>● Policy Number</li>
+          <li>● Policy Period </li>
+        </ul>
         </div>
 
+        <!-- HOW TO DOWNLOAD E-CARD? -->
+        <div class="mt-10 ">
+        <h2 class="text-lg font-semibold mb-2">How to download the E-Card?</h2>
 
-        <!-- INPUTS -->
-        <div class="mt-3 w-full px-6 space-y-4">
-
-          <!-- UHID -->
-          <input type="text" placeholder="Enter UHID" class="w-full rounded-sm border border-gray-300 text-[13px] text-slate-600
-           pl-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-800/30
-           transition hover:border-brand" />
-
-          <!-- DOB + BUTTONS -->
-          <div class="flex items-center gap-3">
-
-            <!-- DOB -->
-            <div class="relative w-full">
-              <input type="date" class="w-full rounded-sm border border-gray-300 text-[13px] text-slate-600
-               pl-4 pr-7 py-2 focus:outline-none focus:ring-2 focus:ring-blue-800/30
-               transition hover:border-brand" />
-            </div>
-
-            <!-- DOWNLOAD ICON-->
-            <button type="submit" class="flex items-center justify-center gap-2 px-5 py-2 rounded-sm
-             bg-brand text-white text-[13px]
-             hover:bg-brand/90">
-
-              <img src="download.png" class="w-4 h-4" />
-              Download
-            </button>
-
-            <!-- RESET -->
-            <button type="reset" class="px-5 py-2 rounded-sm bg-black text-white text-[13px]
-             hover:bg-gray-500 transition">
-              Reset
-            </button>
-
+        <p class="text-gray-600">
+          E-Card can be downloaded easily using the given steps:
+        </p>
+         
+        <ul class="pl-6">
+          <li>● Go to the Dashboard</li>
+          <li>● Click on “Download E-Card”</li>
+          <li>● Choose any one method to download:- Enter UHID + Date of Birth <b>OR</b> Enter Employee ID + Phone Number</li>
+          <li>● Enter the values and a preview of the E-Card will be displayed like in the example given below:</li>
+          
+          <!-- E-CARD -->
+          <div class="flex justify-center mt-10 mb-10">
+            <img src="ecardexple.png" alt="E-Card Example" style="width:480px; height:370px;">
           </div>
+          
+          <li>● The E-Card will be saved as a PDF under employee ID</li>
+        </ul>
         </div>
+        
+        <!-- REMEMBER -->
+        <h2 class="text-lg mt-10 ml-10 text-brand font-semibold mb-2">Remember:</h2>
+        <p class="text-gray-600 ml-10"> 
+          Always check whether your E-Card is valid and up-to-date before visiting the hospital. 
+          An expired or incorrect E-Card can lead to claim rejections and <br> payment hassles later.
+        </p>
 
       </div>
-    </form>
+    </div>
 
-    <div class="translate-y-23 text-black no-dark flex items-center justify-center h-8 w-8 rounded-2xl bg-sky-200">OR</div>
-
-    <!-- CARD 2 -->
-    <form id="ecardForm2" class="w-[400px] ">
-      <div class="rounded-lg mt-7 flex flex-col py-5 items-center bg-white no-dark shadow-md shadow-slate-200
-                dark:bg-slate-800/60 overflow-hidden">
-
-
-        <!-- TITLE -->
-        <div class=" text-[13px] text-black no-dark font-semibold -translate-x-8">
-          Download E-Card with EmployeeID & Mobile No
-        </div>
-
-
-        <!-- INPUTS -->
-        <div class="mt-3 w-full px-6 space-y-4">
-
-          <!-- UHID -->
-          <input type="text" placeholder="Enter Employee ID" class="w-full rounded-sm border border-gray-300 text-[13px] text-slate-600
-           pl-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-800/30
-           transition hover:border-brand" />
-
-          <!-- PHONE NO + BUTTONS -->
-          <div class="flex items-center gap-3">
-
-            <!-- PHONE NO -->
-            <div class="relative w-full">
-              <input type="text" id="phoneInput" placeholder="Enter Phone No" class="w-full rounded-sm border border-gray-300 text-[13px] text-slate-600
-               pl-4 pr-9 py-2 focus:outline-none focus:ring-2 focus:ring-blue-800/30
-               transition hover:border-brand" />
-
-              <!-- PHONE ICON -->
-              <img src="phone.png" class="absolute right-3 -translate-y-6.5 w-4 h-4 opacity-40" alt="phone" />
-            </div>
-
-            <!-- DOWNLOAD -->
-            <button type="submit" class="flex items-center justify-center gap-2 px-5 py-2 rounded-sm
-             bg-brand text-white text-[13px]
-             hover:bg-brand/90">
-
-              <img src="download.png" class="w-4 h-4" />
-              Download
-            </button>
-
-            <!-- RESET -->
-            <button type="reset" class="px-5 py-2 rounded-sm bg-black text-white text-[13px]
-             hover:bg-gray-500 transition">
-              Reset
-            </button>
-
-          </div>
-        </div>
-
-      </div>
-    </form>
-  </div>
-
-  
-
-<!-- RESULT WHEN BUTTON TRIGGERED -->
-<div id="ecardResult" class="flex flex-col items-center mt-10 hidden">
-  <div class="text-center text-lg font-semibold mb-4">
-    Your E-CARD has been generated
-  </div>
-  <div id="ecardCard"></div>
-</div>
-
-
+  </section>
 
   <!-- FOOTER -->
   <footer class="bg-secondary text-slate-300 py-10 mt-10">
@@ -320,9 +274,8 @@
 
       </div>
 
-
       <!-- SOCIAL MEDIA -->
-      <div class="flex items-center ml-195 mr-20">
+      <div class="flex items-center mt-5 ml-195 max-w-6xl mx-auto">
 
         <!-- FACEBOOK -->
         <a href="https://facebook.com" target="_blank" rel="noopener"
@@ -376,7 +329,6 @@
 
   <!-- Link to separate JS file -->
   <script src="script.js"></script>
-
 
 </body>
 
