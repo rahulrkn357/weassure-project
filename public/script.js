@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // SYNCING THE THEME ACROSS BACK AND FORWARD NAVIGATION
-   window.addEventListener("pageshow", () => {
+  window.addEventListener("pageshow", () => {
     const body = document.getElementById("body");
     const icon = document.getElementById("theme-icon");
 
@@ -185,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cardWrapper.appendChild(container);
   }
-
 
 
 
@@ -447,7 +446,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ecardForm1.addEventListener("reset", clearEcard);
   ecardForm2.addEventListener("reset", clearEcard);
+
 });
-
-
 // DOM ENDS HERE   
+
+
+// ===== RADIO BUTTON (SEPARATE - SAFE) =====
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const radios = document.querySelectorAll('input[name="dataType"]');
+
+  const ecard = document.getElementById('ecardTable');
+  const hospital = document.getElementById('hospitalTable');
+  const blacklist = document.getElementById('blacklistedTable');
+
+  // Safety check (important)
+  if (!ecard || !hospital || !blacklist) return;
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', function () {
+
+      ecard.classList.add("hidden");
+      hospital.classList.add("hidden");
+      blacklist.classList.add("hidden");
+
+      if (this.value === "ecard") {
+        ecard.classList.remove("hidden");
+      } 
+      else if (this.value === "hospital") {
+        hospital.classList.remove("hidden");
+      } 
+      else if (this.value === "blacklist") {
+        blacklist.classList.remove("hidden");
+      }
+
+    });
+  });
+
+  // Default trigger
+  document.querySelector('input[name="dataType"]:checked')
+          ?.dispatchEvent(new Event('change'));
+
+});
